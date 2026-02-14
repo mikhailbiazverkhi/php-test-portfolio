@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'host' => 'localhost',
-    'dbname' => 'php_test',
-    'username' => 'root',
-    'password' => '',
-    'charset' => 'utf8mb4'
+    'host' => $_ENV['DB_HOST'],
+    'dbname' => $_ENV['DB_NAME'],
+    'username' => $_ENV['DB_USER'],
+    'password' => $_ENV['DB_PASS'],
+    'charset' => $_ENV['DB_CHARSET']
 ];

@@ -4,6 +4,8 @@ session_start();
 
 require_once __DIR__ . '/../flight/autoload.php';
 require_once __DIR__ . '/../flight/Flight.php';
+require_once __DIR__ . '/../config/env.php';
+loadEnv(__DIR__ . '/../.env');
 
 // Load DB config
 $dbConfig = require __DIR__ . '/../config/database.php';
