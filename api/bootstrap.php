@@ -5,11 +5,15 @@ session_start();
 require_once __DIR__ . '/../flight/autoload.php';
 require_once __DIR__ . '/../flight/Flight.php';
 
-// PDO
+// Load DB config
+$dbConfig = require __DIR__ . '/../config/database.php';
+
+$dsn = "mysql:host={$dbConfig['host']};dbname={$dbConfig['dbname']};charset={$dbConfig['charset']}";
+
 $pdo = new PDO(
-    'mysql:host=localhost;dbname=php_test;charset=utf8mb4',
-    'root',
-    '',
+    $dsn,
+    $dbConfig['username'],
+    $dbConfig['password'],
     [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
 );
 Flight::set('pdo', $pdo);
